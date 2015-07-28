@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  
+  <title><![CDATA[CatOnFrog]]></title>
+  
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://yoursite.com//"/>
+  <updated>2015-07-28T12:54:00.000Z</updated>
+  <id>http://yoursite.com//</id>
+  
+  <author>
+    <name><![CDATA[Cat On Frog]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[test article]]></title>
+    <link href="http://yoursite.com/2015/07/28/test-article/"/>
+    <id>http://yoursite.com/2015/07/28/test-article/</id>
+    <published>2015-07-28T12:54:00.000Z</published>
+    <updated>2015-07-28T12:54:00.000Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[laravel除错]]></title>
+    <link href="http://yoursite.com/2015/05/16/Projects/USDealLand/%E8%B0%83%E8%AF%95/"/>
+    <id>http://yoursite.com/2015/05/16/Projects/USDealLand/调试/</id>
+    <published>2015-05-16T05:26:17.000Z</published>
+    <updated>2015-05-28T12:49:26.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="Can’t_connect_to_local_MySQL_server_through_socket_‘/tmp/mysql-sock’_(2)">Can’t connect to local MySQL server through socket ‘/tmp/mysql.sock’ (2)</h3><ul>
+<li>For MAMP<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s <span class="regexp">/Applications/M</span>AMP<span class="regexp">/tmp/my</span>sql<span class="regexp">/mysql.sock /</span>tmp<span class="regexp">/mysql.sock</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="Can’t_connect_to_local_MySQL_server_through_socket_‘/tmp/mysql-sock’_(2)">Can’t connect to local MySQL server through socket ‘/tmp/m]]>
+    </summary>
+    
+      <category term="laravel" scheme="http://yoursite.com/tags/laravel/"/>
+    
+      <category term="laravel" scheme="http://yoursite.com/categories/laravel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[laravel安装]]></title>
+    <link href="http://yoursite.com/2015/05/16/Projects/USDealLand/%E5%AE%89%E8%A3%85/"/>
+    <id>http://yoursite.com/2015/05/16/Projects/USDealLand/安装/</id>
+    <published>2015-05-16T05:19:09.000Z</published>
+    <updated>2015-06-13T06:35:56.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="安装">安装</h2><ul>
+<li><p>下载代码</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/douyasi/yascmf.git usdealland</span><br><span class="line"><span class="keyword">cd</span> usdealland</span><br><span class="line">composer install</span><br><span class="line">touch .env</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>导入数据库</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql -hlocalhost -uroot -p    # 密码: deal</span><br><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> dealcmf_app <span class="keyword">COLLATE</span> <span class="string">'utf8_unicode_ci'</span>;</span>  </span><br><span class="line"><span class="operator"><span class="keyword">use</span> deal;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更名 /Users/ll/Codes/usdealland/yascmf_app.sql 为 usdealland.sql<br>并全部替换其中的yascmf 为 dealcmf<br>导入新的sql文件</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">source</span> <span class="regexp">/Users/</span>ll<span class="regexp">/Codes/u</span>sdealland<span class="regexp">/dealcmf_app.sql;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>替换project中所有yascmf<em> 为dealcmf</em>   # yascmf<em>为旧的表名， dealcmf</em>为新的表名</p>
+</li>
+<li><p>修改.env</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">APP_ENV=</span>local</span><br><span class="line"><span class="variable">APP_DEBUG=</span><span class="constant">true</span></span><br><span class="line"><span class="variable">APP_KEY=</span>RrQvzbUxaKIlj74s3hOYClGQ71zoVixr</span><br><span class="line"></span><br><span class="line"><span class="variable">DB_HOST=</span>localhost</span><br><span class="line"><span class="variable">DB_DATABASE=</span>dealcmf_app</span><br><span class="line"><span class="variable">DB_USERNAME=</span>root</span><br><span class="line"><span class="variable">DB_PASSWORD=</span>deal</span><br><span class="line"></span><br><span class="line"><span class="variable">CACHE_DRIVER=</span>file</span><br><span class="line"><span class="variable">SESSION_DRIVER=</span>file</span><br><span class="line"><span class="variable">QUEUE_DRIVER=</span>sync</span><br><span class="line"></span><br><span class="line"><span class="variable">MAIL_DRIVER=</span>smtp</span><br><span class="line"><span class="variable">MAIL_HOST=</span>mailtrap.io</span><br><span class="line"><span class="variable">MAIL_PORT=</span><span class="number">2525</span></span><br><span class="line"><span class="variable">MAIL_USERNAME=</span><span class="constant">null</span></span><br><span class="line"><span class="variable">MAIL_PASSWORD=</span><span class="constant">null</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改权限</p>
+<figure class="highlight monkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chmod <span class="number">777</span> storage</span><br><span class="line">chmod <span class="number">777</span> ./<span class="keyword">public</span>/uploads<span class="preprocessor">     # 如果要上传图片</span></span><br><span class="line">chmod <span class="number">777</span> ./<span class="keyword">public</span>/<span class="built_in">min</span>/tmp<span class="preprocessor">      # 如果要使用 minify 来压缩与合并 CSS 与 JS 静态资源</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>mamp中host设置usdealland的Document root目录</p>
+</li>
+<li>访问服务器绑定的域名   usdealland:8888</li>
+<li>登录后台 admin | admin</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="安装">安装</h2><ul>
+<li><p>下载代码</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><spa]]>
+    </summary>
+    
+      <category term="laravel" scheme="http://yoursite.com/categories/laravel/"/>
+    
+  </entry>
+  
+</feed>
